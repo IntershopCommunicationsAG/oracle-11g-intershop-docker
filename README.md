@@ -62,10 +62,13 @@ The files can be created on Ubuntu with
 sudo alien --scripts -d oracle-xe*.rpm
 ```
 
-Files must be located in the folder "installfiles" of this project.
+For internal and automatic usage the files of this project are located in separate project and will be downloaded in a separate image. Other steps for package preparation are possible in such a step.
 
-For internal and automatic usage the files of this project are located in separate project as a submodule.
+```
+docker build . --build-arg AUTH_TOKEN=<TOKEN> --tag oracle-11g-intershop
+```
 
+User registered for this organisation can use this scripts and the command with their own access token without any change.
 ## License
 
 Copyright 2014-2020 Intershop Communications.

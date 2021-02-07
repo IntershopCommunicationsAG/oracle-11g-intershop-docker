@@ -12,13 +12,20 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+FROM alpine AS PREPBIN
+
+ARG AUTH_TOKEN
+
+RUN apk --update add curl
+RUN curl -H "Authorization: token $AUTH_TOKEN" -L https://api.github.com/repos/IntershopCommunicationsAG/oracle-11g-intershop/tarball > pkg.tar.gz
+RUN mkdir oraclepkgs && tar -xf pkg.tar.gz && mv IntershopCommunicationsAG-oracle-11g*/* oraclepkgs
 
 FROM ubuntu:18.04
 
 LABEL maintainer="a-team@intershop.de"
 
 COPY assets /assets
-COPY installfiles /assets
+COPY --from=PREPBIN oraclepkgs /assets
 
 ENV DEBIAN_FRONTEND=noninteractive
 

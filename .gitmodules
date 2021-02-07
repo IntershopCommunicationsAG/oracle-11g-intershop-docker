@@ -1,3 +1,0 @@
-[submodule "installfiles"]
-	path = installfiles
-	url = git@github.com:IntershopCommunicationsAG/oracle-11g-intershop.git
