@@ -18,7 +18,7 @@ ARG AUTH_TOKEN
 
 RUN apk --update add curl
 RUN curl -H "Authorization: token $AUTH_TOKEN" -L https://api.github.com/repos/IntershopCommunicationsAG/oracle-11g-intershop/tarball > pkg.tar.gz
-RUN mkdir oraclepkgs && tar -xf pkg.tar.gz && mv IntershopCommunicationsAG-oracle-11g*/* oraclepkgs
+RUN mkdir oraclepkgs && tar -zxvf pkg.tar.gz && mv IntershopCommunicationsAG-oracle-11g*/* oraclepkgs
 
 FROM ubuntu:18.04
 
