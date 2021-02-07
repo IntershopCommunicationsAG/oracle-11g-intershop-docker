@@ -40,7 +40,6 @@ RUN /assets/setup.sh
 
 RUN rm -r /assets/
 
-EXPOSE 22
 EXPOSE 1521
 EXPOSE 8080
 
