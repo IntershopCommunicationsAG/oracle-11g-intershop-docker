@@ -20,4 +20,4 @@ sed -i "s/%port%/1521/g" "${TNSNAMES_ORA}" &&
 
 service oracle-xe start &&
 
-monitor $ALERT_LOG &
+monitor $ALERT_LOG

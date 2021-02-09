@@ -50,4 +50,4 @@ RUN rm -r /assets/
 EXPOSE 1521
 EXPOSE 8080
 
-CMD /usr/sbin/startup.sh
+ENTRYPOINT [ "/usr/sbin/startup.sh" ]
