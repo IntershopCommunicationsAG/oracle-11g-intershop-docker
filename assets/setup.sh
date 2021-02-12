@@ -17,4 +17,5 @@ export ORACLE_SID=XE
 . /assets/prepare_db.sh
 . /assets/prepare_tablespaces.sh
 . /assets/prepare_user.sh
+. /assets/prepare_user_2.sh
 . /assets/restart_db.sh
